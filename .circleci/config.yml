@@ -5,4 +5,12 @@ jobs:
       - image: node:11.6.0-alpine
     steps:
       - checkout
-      - run: yarn && yarn build
+      - run: yarn && yarn build && mv build docs
+      - deploy:
+          command: |
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "iam@aaronherres.com"
+            git config user.name "Deployment Bot"
+            git commit --allow-empty -m "Trigger deployment"
+            # Push quietly to prevent showing the token in log
+            git push -q https://${GITHUB_TOKEN}@github.com/redaphid/site.git master
