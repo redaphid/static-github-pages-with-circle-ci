@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:11.6.0-alpine
+      - image: node:11.6.0-stretch
     steps:
       - checkout
       - run: yarn && yarn build && mv build docs
