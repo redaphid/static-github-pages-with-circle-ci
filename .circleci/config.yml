@@ -1,11 +1,10 @@
 version: 2
 jobs:
   build:
-    filters:
-      tags:
-        only: /^v.*/
-      branches:
-        ignore: /.*/
+    tags:
+      only: /^v.*/
+    branches:
+      ignore: /.*/
     docker:
       - image: node:11.6.0-stretch
     steps:
