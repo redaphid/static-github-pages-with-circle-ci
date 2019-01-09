@@ -4,6 +4,8 @@ jobs:
     filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
     docker:
       - image: node:11.6.0-stretch
     steps:
