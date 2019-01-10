@@ -16,4 +16,4 @@ jobs:
             git add .
             git commit -am "Trigger deployment"           
             # Push quietly to prevent showing the token in log
-            git push -fq https://${GITHUB_TOKEN}@github.com/redaphid/site.git master
+            git push -f https://${GITHUB_TOKEN}@github.com/redaphid/site.git master
