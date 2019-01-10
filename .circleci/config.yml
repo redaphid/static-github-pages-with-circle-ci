@@ -12,9 +12,9 @@ jobs:
           git merge deploy && 
           yarn && 
           yarn build &&
-          cp docs/CNAME build/
           rm -rf docs && 
           mv build docs &&           
+          echo "aaronherres.com" > docs/CNAME
           ls
       - deploy:
           command: |
