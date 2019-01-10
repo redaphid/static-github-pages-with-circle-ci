@@ -1,11 +1,12 @@
 version: 2
-jobs:
-  filters:
-    build:
-      tags:
-        only: /^v.*/        
+jobs:    
+  build:
     docker:
-      - image: node:11.6.0-stretch
+      - image: node:11.6.0-stretch      
+      
+    filters:    
+      tags:
+        only: /^v.*/
     steps:
       - checkout
       - run: yarn && yarn build && rm -rf docs && mv build/ docs && ls
