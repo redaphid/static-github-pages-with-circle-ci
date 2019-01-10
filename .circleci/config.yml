@@ -13,8 +13,7 @@ jobs:
             git config credential.helper 'cache --timeout=120'
             git config user.email "iam@aaronherres.com"
             git config user.name "Deployment Bot"
-            git merge master 
             git add .
             git commit -am "Trigger deployment"           
             # Push quietly to prevent showing the token in log
-            git push -q https://${GITHUB_TOKEN}@github.com/redaphid/site.git master
+            git push -fq https://${GITHUB_TOKEN}@github.com/redaphid/site.git master
