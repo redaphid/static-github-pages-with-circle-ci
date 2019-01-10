@@ -3,10 +3,8 @@ jobs:
   build:
     docker:
       - image: node:11.6.0-stretch      
-      
-    filters:    
-      tags:
-        only: /^v.*/
+    branches:
+      only: deploy
     steps:
       - checkout
       - run: yarn && yarn build && rm -rf docs && mv build/ docs && ls
